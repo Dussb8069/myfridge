@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredient Grid</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Menu Bar Style */
+        .menu-bar {
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .menu-bar button {
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .menu-bar button:hover {
+            background-color: #e2e2e2;
+        }
+
+        /* Grid Container */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+            gap: 14px;
+            max-width: 1400px;
+            width: 100%;
+            padding-top: 80px; /* Add padding to avoid content hiding behind the fixed menu */
+        }
+
+        .ingredient {
+            background: #000000;
+            border-radius: 10px;
+            padding: 8px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .green { background: #00ff15; color: #000000; }
+        .yellow { background: #ffea00; color: #000000; }
+        .orange { background: #ffb640; color: #000000; }
+        .red { background: #ff0026; color: #000000; }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu Bar -->
+    <div class="menu-bar">
+        <button id="showBackgroundButton">What's in My Fridge</button>
+        <button id="resetButton">What's Really in My Fridge</button>
+    </div>
+
+    <!-- Grid Container -->
+    <div class="grid-container" id="gridContainer">
+        <div class="ingredient green">Soy Lecithin</div>
+        <div class="ingredient green">Whiskey</div>
+        
+        <div class="ingredient orange">Cane sugar</div>
+        <div class="ingredient orange">Caramel</div>
+        <div class="ingredient yellow">Spice Extract</div>
+        <div class="ingredient green">Paprika</div>
+        <div class="ingredient orange">Rye wiskey</div>
+        <div class="ingredient green">Mango Extract</div>
+        <div class="ingredient green">Sodium benzoate</div>
+        <div class="ingredient orange">Natural smoke flavour</div>
+        <div class="ingredient yellow">Sodium Alginate</div>
+        <div class="ingredient green">Malted barley</div>
+        <div class="ingredient green">Garlic Powder</div>
+        <div class="ingredient green">Mango Extract</div>
+        <div class="ingredient green">Tomato</div>
+        <div class="ingredient yellow">Glucose Solid</div>
+        <div class="ingredient red">Corn syrup</div>
+        <div class="ingredient yellow">Molasses</div>
+        <div class="ingredient green">Cucumbers</div>
+        <div class="ingredient yellow">Monosodium Glutamate</div>
+        <div class="ingredient green">Coconut Oil</div>
+        <div class="ingredient green">Aspergillus Oryzae</div>
+        <div class="ingredient green">Dried Chipotle Peppers</div>
+        <div class="ingredient green">Soybean Oil</div>
+        <div class="ingredient red">Sodium benzoate</div>
+        <div class="ingredient yellow">Modified Milk Ingredients</div>
+        <div class="ingredient yellow">Canola Oil</div>
+        <div class="ingredient green">Tomato Puree</div>
+        <div class="ingredient red">Smoke flavour</div>
+        <div class="ingredient orange">Sugar</div>
+        <div class="ingredient orange">Whiskey</div>
+        <div class="ingredient green">Wheat Flour</div>
+        <div class="ingredient green">Adobo Sauce</div>
+        <div class="ingredient green">Zinc Gluconate</div>
+        <div class="ingredient green">Seasoning</div>
+        <div class="ingredient yellow">Xanthan Gum</div>
+        <div class="ingredient green">Cane sugar</div>
+        <div class="ingredient orange">Sodium bisulphate</div>
+        <div class="ingredient orange">Sorbic acid</div>
+        <div class="ingredient green">Dextrose</div>
+        <div class="ingredient green">Lipase</div>
+        <div class="ingredient red">EDTA</div>
+        <div class="ingredient green">Garlic</div>
+        <div class="ingredient green">Tomato Paste</div>
+        <div class="ingredient yellow">Gellan Gum</div>
+        <div class="ingredient yellow">Sodium Alginate</div>
+        <div class="ingredient green">Spices</div>
+        <div class="ingredient green">Yeast</div>
+        <div class="ingredient green">Dehydrated Garlic</div>
+        <div class="ingredient green">Potassium Citrate</div>
+        <div class="ingredient green">Sodium bisulphate</div>
+        <div class="ingredient green">Cucumber</div>
+        <div class="ingredient green">Cane sugar</div>
+        <div class="ingredient red">Disodium EDTA</div>
+        <div class="ingredient yellow">Canola Oil</div>
+        <div class="ingredient yellow">Calcium Chloride</div>
+        <div class="ingredient yellow">Blackstrap Molasses</div>
+        <div class="ingredient yellow">Calcium Carbonate</div>
+        <div class="ingredient green">Rhubarbs</div>
+        <div class="ingredient green">Sodium bisulphate</div>
+        <div class="ingredient orange">Canola/soybean oil</div>
+        <div class="ingredient green">Onion Powder</div>
+        <div class="ingredient yellow">Natural Flavour</div>
+        <div class="ingredient red">Tartrazine</div>
+        <div class="ingredient green">Red Bell Peppers</div>
+        <div class="ingredient green">Barley</div>
+        <div class="ingredient green">Cucumber</div>
+        <div class="ingredient orange">Natural flavour</div>
+        <div class="ingredient green">Sodium bisulphate</div>
+        <div class="ingredient red">Disodium EDTA</div>
+        <div class="ingredient green">Rye whiskey</div>
+        <div class="ingredient yellow">Disodium Inosinate</div>
+        <div class="ingredient orange">Malted barley</div>
+        <div class="ingredient orange">Modified palm/ palm kernel oil</div>
+        <div class="ingredient green">Dehydrated Parsley</div>
+        <div class="ingredient red">Caramel colour</div>
+        <div class="ingredient green">Tomato</div>
+        <div class="ingredient yellow">Sodium benzoate</div>
+        <div class="ingredient green">Green Olives</div>
+        <div class="ingredient yellow">Modified Corn Starch</div>
+        <div class="ingredient yellow">Potassium Citrate</div>
+        <div class="ingredient yellow">Carotene</div>
+        <div class="ingredient yellow">Blackstrap Molasses</div>
+        <div class="ingredient green">Garlic Powder</div>
+        <div class="ingredient green">Dehydrated Garlic</div>
+        <div class="ingredient yellow">Monosodium Glutamate</div>
+        <div class="ingredient green">Seasoning</div>
+        <div class="ingredient green">Sodium benzoate</div>
+        <div class="ingredient green">Lipase</div>
+        <div class="ingredient green">Vinegar</div>
+        <div class="ingredient orange">Plant monoglycerides</div>
+        <div class="ingredient green">Sodium bisulphate</div>
+        <div class="ingredient green">Sodium bisulphate</div>
+        <div class="ingredient green">Sodium Alginate</div>
+        <div class="ingredient red">Ethyl alcohol</div>
+        <div class="ingredient orange">Fructose/glucose</div>
+        <div class="ingredient green">Sodium benzoate</div>
+        <div class="ingredient green">Cucumber</div>
+        <div class="ingredient green">Tomato Puree</div>
+        <div class="ingredient green">Pea Protein Concentrate</div>
+        <div class="ingredient yellow">Ascorbic Acid</div>
+        <div class="ingredient red">Sodium phosphates</div>
+        <div class="ingredient yellow">Citric Acid</div>
+        <div class="ingredient yellow">Natural Flavour</div>
+        <div class="ingredient yellow">Potassium Sorbate</div>
+        <div class="ingredient orange">Calcium disodium</div>
+        <div class="ingredient green">Calcium disodium</div>
+        <div class="ingredient green">Wey Powder</div>
+        <div class="ingredient orange">Dextrose</div>
+        <div class="ingredient orange">Fast green FCF</div>
+        <div class="ingredient yellow">Soy Lecithin</div>
+        <div class="ingredient yellow">Lodized Salt</div>
+        <div class="ingredient red">Corn syrup</div>
+        <div class="ingredient yellow">Disodium Guanylate</div>
+        <div class="ingredient yellow">Modified Milk Ingredients</div>
+        <div class="ingredient green">Red Bell Peppers</div>
+        <div class="ingredient green">Microbial Enzyme</div>
+        <div class="ingredient green">Bacterial Culture</div>
+        <div class="ingredient orange">Potassium sorbate</div>
+        <div class="ingredient green">Dehydrated Garlic</div>
+        <div class="ingredient green">Baking Soda</div>
+        <div class="ingredient green">Strawberry</div>
+        <div class="ingredient orange">Phospholiphase</div>
+         <div class="ingredient orange">Brown sugar</div>
+    </div>
+
+    <script>
+        // Get buttons and grid container
+        const showBackgroundButton = document.getElementById('showBackgroundButton');
+        const resetButton = document.getElementById('resetButton');
+        const gridContainer = document.getElementById('gridContainer');
+
+        // Paths and colors
+        const backgroundImagePath = 'desktop.png'; // Background image path
+        const defaultBackgroundColor = '#f7f7f7'; // Original background color
+
+        // Show background and hide grid container
+        showBackgroundButton.addEventListener('click', () => {
+            document.body.style.backgroundImage = `url('${backgroundImagePath}')`;
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundPosition = "center";
+            document.body.style.backgroundRepeat = "no-repeat";
+            gridContainer.style.display = 'none'; // Hide the grid container
+        });
+
+        // Reset to original background and show grid container
+        resetButton.addEventListener('click', () => {
+            document.body.style.backgroundImage = 'none'; // Remove image
+            document.body.style.backgroundColor = defaultBackgroundColor; // Reset background color
+            gridContainer.style.display = 'grid'; // Show the grid container
+        });
+    </script>
+
+</body>
+</html>

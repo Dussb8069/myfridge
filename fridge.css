@@ -1,0 +1,369 @@
+/* body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .carousel {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+    text-align: center;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .food-image {
+    width: 100%;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .nutrition-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .image-container:hover .nutrition-label {
+    opacity: 1;
+  }
+  
+  .image-container:hover .food-image {
+    opacity: 0;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  #prevBtn {
+    left: 0;
+  }
+  
+  #nextBtn {
+    right: 0;
+  }
+  
+  .arrow:focus {
+    outline: none;
+  }
+   */
+
+  /* body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .carousel {
+    position: relative;
+    width: 900px; /* Adjust to fit 3 items 
+    overflow: hidden;
+  }
+  
+  .carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-item {
+    min-width: 300px; /* Each item takes up 1/3 of the carousel 
+    text-align: center;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .food-image {
+    width: 100%;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .nutrition-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .image-container:hover .nutrition-label {
+    opacity: 1;
+  }
+  
+  .image-container:hover .food-image {
+    opacity: 0;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  #prevBtn {
+    left: 0;
+  }
+  
+  #nextBtn {
+    right: 0;
+  }
+  
+  .arrow:focus {
+    outline: none;
+  }
+  */
+
+/* ----------------------------------------------------------- */
+
+/* General Legend Styles */
+.legend {
+    list-style: none; /* Removes bullet points */
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+}
+
+/* Individual Category Styles */
+.legend .green {
+    color: #00b600; /* Dark green */
+    margin-bottom: 5px;
+}
+
+.legend .yellow {
+    color: #FFD700; /* Gold */
+    margin-bottom: 5px;
+}
+
+.legend .orange {
+    color: #FF8C00; /* Dark orange */
+    margin-bottom: 5px;
+}
+
+.legend .red {
+    color: #ed0000; /* Firebrick red */
+    margin-bottom: 5px;
+}
+
+
+.image-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .food-image {
+    width: 100%;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Nutrition list hidden by default */
+  .nutrition-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight background overlay */
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction when hidden */
+    transition: opacity 0.3s ease-in-out;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  /* List item styling */
+  .nutrition-list li {
+    font-size: 14px;
+    margin: 1px 0;
+    text-align: center;
+  }
+  
+  /* Color coding */
+  .nutrition-list .green {
+    color: green;
+  }
+  
+  .nutrition-list .yellow {
+    color: rgb(255, 214, 111);
+  }
+  
+  .nutrition-list .orange {
+    color: rgb(255, 136, 0);
+  }
+
+  .nutrition-list .red {
+    color: red;
+  }
+  
+  /* Hover effect to display the list */
+  .image-container:hover .nutrition-list {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .image-container:hover .food-image {
+    opacity: 0; /* Hide the image when hovered */
+  }
+
+
+
+
+
+  /* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  
+  /* Text Section */
+  .text-section {
+  
+    max-width: 400px;
+  }
+  
+  .text-section h1 {
+    font-size: 30px;
+    margin-bottom: 1px;
+    color: #333;
+  }
+  
+  .text-section p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  Legend{
+    position: absolute;
+    left: 30px;
+    top: 2px; 
+  }
+  /* Carousel Section */
+  .carousel {
+    flex: 2; /* Take up more space proportionally */
+    position: relative;
+    width: 900px;
+    overflow: hidden;
+  }
+  
+  .carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-item {
+    min-width: 300px; /* Each item takes up 1/3 of the carousel */
+    text-align: center;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .food-image {
+    width: 100%;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .nutrition-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .image-container:hover .nutrition-label {
+    opacity: 1;
+  }
+  
+  .image-container:hover .food-image {
+    opacity: 0;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  #prevBtn {
+    left: 0;
+  }
+  
+  #nextBtn {
+    right: 0;
+  }
+  
+  .arrow:focus {
+    outline: none;
+  }
+  
